@@ -24,9 +24,6 @@ interface intface
 
     public double speedFactor();
 
-    public void incrementSpeed(double amount);
-
-    public void decrementSpeed(double amount);
 
     // TODO fix this method according to lab pm
     public void gas(double amount);

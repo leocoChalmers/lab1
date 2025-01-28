@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Car {
+public abstract class Car implements intface, Movable {
     final int nrDoors = 0; // Number of doors on the car
     double enginePower = 0.0; // Engine power of the car
     double currentSpeed = 0.0; // The current speed of the car
