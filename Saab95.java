@@ -4,11 +4,6 @@ public class Saab95 extends Car
 {
 
     boolean turboOn;
-    int nrDoors; // Number of doors on the car
-    double enginePower; // Engine power of the car
-    double currentSpeed; // The current speed of the car
-    Color color; // Color of the car
-    String modelName; // The car model name
 
     public Saab95(){
         nrDoors = 2;
@@ -44,11 +39,18 @@ public class Saab95 extends Car
     
     // TODO fix this method according to lab pm
     public void gas(double amount){
-        incrementSpeed(amount);
+        if(amount < 1 && amount>0){
+            if(getCurrentSpeed() > 0 && getCurrentSpeed() < getEnginePower())
+                incrementSpeed(amount);
+        }
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
-        decrementSpeed(amount);
+        if (amount < 1 && amount >0){
+            if(getCurrentSpeed() > 0 && getCurrentSpeed() < getEnginePower())
+                decrementSpeed(amount);
+
+        }
     }
 }
