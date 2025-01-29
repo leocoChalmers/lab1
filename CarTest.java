@@ -53,6 +53,22 @@ public class CarTest {
     saab.gas(1);
     saab.move();
     Assertions.assertEquals(125+6.35,saab.getPosition()[1]);
+
+    volvo.startEngine();
+    for (int i=0; i<100; i++){
+      volvo.gas(1);
+    }
+    volvo.move();
+    Assertions.assertEquals(100, volvo.getPosition()[1]);
+    volvo.stopEngine();
+    volvo.startEngine();
+    volvo.gas(1);
+    volvo.gas(1);
+    volvo.gas(1);
+    volvo.gas(1);
+    volvo.gas(1);
+    volvo.move();
+    Assertions.assertEquals(100 + 6.35,volvo.getPosition()[1]);
   }
 
   @Test

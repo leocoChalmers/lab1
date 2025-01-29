@@ -1,6 +1,6 @@
 import java.awt.*;
 
-    abstract class Car implements intface, Movable {
+    abstract class Car implements Movable {
     protected int nrDoors = 0; // Number of doors on the car
     protected double enginePower = 0.0; // Engine power of the car
     protected double currentSpeed = 0.0; // The current speed of the car
