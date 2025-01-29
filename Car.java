@@ -9,6 +9,14 @@ import java.awt.*;
     protected int direction = 0; //0 = North, 1 = East, 2 = South, 3 = West
     protected String modelName;
 
+    public Car(String modelName, int nrDoors, Color color, double enginePower){
+        this.modelName = modelName;
+        this.nrDoors = nrDoors;
+        this.color = color;
+        this.enginePower = enginePower;
+        stopEngine();
+    }
+
     public void move(){
         switch (direction){
             case 0:
@@ -37,6 +45,10 @@ import java.awt.*;
         return position;
     }
 
+    protected abstract void incrementSpeed(double amount);
+
+    protected abstract void decrementSpeed(double amount);
+
     public int getNrDoors(){
         return nrDoors;
     }
@@ -60,5 +72,20 @@ import java.awt.*;
 
     public void stopEngine(){
         currentSpeed = 0;
+    }
+    public void gas(double amount){
+        if(amount <= 1 && amount>0){
+            incrementSpeed(amount);
+        } else {
+            throw new IllegalArgumentException("Too much gas");
+        }
+    }
+
+    public void brake(double amount){
+        if (amount < 1 && amount >0){
+            decrementSpeed(amount);
+        }else{
+            throw new IllegalArgumentException("Too much brake");
+        }
     }
 }

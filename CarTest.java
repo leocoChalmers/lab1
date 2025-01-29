@@ -51,6 +51,8 @@ public class CarTest {
     saab.gas(1);
     saab.gas(1);
     saab.gas(1);
+    Assertions.assertThrows(IllegalArgumentException.class, () -> saab.gas(2));
+
     saab.move();
     Assertions.assertEquals(125+6.35,saab.getPosition()[1]);
 
@@ -67,6 +69,7 @@ public class CarTest {
     volvo.gas(1);
     volvo.gas(1);
     volvo.gas(1);
+    Assertions.assertThrows(IllegalArgumentException.class, () -> volvo.gas(2));
     volvo.move();
     Assertions.assertEquals(100 + 6.35,volvo.getPosition()[1]);
   }
