@@ -8,26 +8,23 @@ interface intface
     Color color = null; // Color of the car
     String modelName = ""; // The car model name
 
-    public int getNrDoors();
-    public double getEnginePower();
+    int getNrDoors();
+    double getEnginePower();
 
 
-    public double getCurrentSpeed();
+    double getCurrentSpeed();
 
-    public Color getColor();
+    Color getColor();
 
-    public void setColor(Color clr);
+    void setColor(Color clr);
 
-    public void startEngine();
+    void startEngine();
 
-    public void stopEngine();
+    void stopEngine();
 
-    public double speedFactor();
+    double speedFactor();
 
+    void gas(double amount);
 
-    // TODO fix this method according to lab pm
-    public void gas(double amount);
-
-    // TODO fix this method according to lab pm
-    public void brake(double amount);
+    void brake(double amount);
 }
