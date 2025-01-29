@@ -9,9 +9,6 @@ import java.awt.*;
     protected int direction = 0; //0 = North, 1 = East, 2 = South, 3 = West
     protected String modelName;
 
-    private int changeDirection(int dir, int i){
-        return (4 + dir + i) % 4;
-    }
     public void move(){
         switch (direction){
             case 0:
@@ -28,6 +25,7 @@ import java.awt.*;
                 break;
         }
     }
+    private int changeDirection(int dir, int i){return (4 + dir + i) % 4;}
     public void turnLeft(){
         direction = changeDirection(direction, -1);
     }
